@@ -1,21 +1,21 @@
 // LED: PORT A PIN 5
 #include <stdint.h>
 
-#define PERIPH_BASE				(0x40000000UL)
+#define PERIPH_BASE			(0x40000000UL)
 
 #define AHB1PERIPH_OFFSET		(0x00020000UL)
 #define AHB1PERIPH_BASE			(PERIPH_BASE + AHB1PERIPH_OFFSET)
 
 #define GPIOA_OFFSET			(0x0000UL)
-#define GPIOA_BASE				(AHB1PERIPH_BASE + GPIOA_OFFSET)
+#define GPIOA_BASE			(AHB1PERIPH_BASE + GPIOA_OFFSET)
 
-#define RCC_OFFSET				(0x3800UL)
-#define RCC_BASE				(AHB1PERIPH_BASE + RCC_OFFSET)
+#define RCC_OFFSET			(0x3800UL)
+#define RCC_BASE			(AHB1PERIPH_BASE + RCC_OFFSET)
 
-#define GPIOAEN					(1U<<0) //SET BIT_0 TO 1
+#define GPIOAEN				(1U<<0) //SET BIT_0 TO 1
 
-#define PIN5					(1U<<5)
-#define LED_PIN					PIN5
+#define PIN5				(1U<<5)
+#define LED_PIN				(PIN5)
 
 typedef struct
 {
@@ -32,8 +32,8 @@ typedef struct
 
 } GPIO_TypeDef;
 
-#define RCC		    ((RCC_TypeDef*) RCC_BASE)
-#define GPIOA		((GPIO_TypeDef*)GPIOA_BASE)
+#define RCC		    		((RCC_TypeDef*) RCC_BASE)
+#define GPIOA				((GPIO_TypeDef*)GPIOA_BASE)
 
 int main(void)
 {
